@@ -69,7 +69,7 @@ body {
 
     /* --- TAMBAHAN KODE UNTUK MEMPERTINGGI GRAFIK --- */
     position: relative;
-    height: 550px; /* Anda bisa membesarkan angka ini (misal 600px) jika dirasa masih kurang tinggi */
+    height: 650px; /* Anda bisa membesarkan angka ini (misal 600px) jika dirasa masih kurang tinggi */
 }
 
 /* --- TAMPILAN BATERAI NOKIA --- */
