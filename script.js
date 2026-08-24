@@ -28,6 +28,7 @@ const chartTegangan = new Chart(ctx, {
     },
 options: {
         responsive: true,
+        maintainAspectRatio: false, // Membuat grafik lebih tinggi
         scales: {
             y: {
                 min: 0,

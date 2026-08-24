@@ -66,6 +66,10 @@ body {
     max-width: 900px;
     margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+
+    /* --- TAMBAHAN KODE UNTUK MEMPERTINGGI GRAFIK --- */
+    position: relative;
+    height: 550px; /* Anda bisa membesarkan angka ini (misal 600px) jika dirasa masih kurang tinggi */
 }
 
 /* --- TAMPILAN BATERAI NOKIA --- */
