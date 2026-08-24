@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard C300 Scania</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Library Firebase (Versi Compat) & Chart.js -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Sistem Peringatan Dini Baterai C300</h1>
+        <p>Live Telemetry Monitoring</p>
+    </div>
+
+    <!-- Panel Data Real-time -->
+    <div class="container">
+        <div class="card" id="card-status">
+            <h3>Status Sistem</h3>
+            <h2 id="teks-status">Menunggu Data...</h2>
+        </div>
+        
+        <div class="card">
+            <h3>Tegangan Aktual</h3>
+            <h2 id="teks-tegangan">0.00 V</h2>
+        </div>
+
+        <div class="card">
+            <h3>Arus Aktual</h3>
+            <h2 id="teks-arus">0 mA</h2>
+        </div>
+
+        <!-- Card Level Baterai (Teks Besar + Gambar Baterai) -->
+        <div class="card">
+            <h3>Level Baterai</h3>
+            
+            <!-- Teks level angka tetap dipertahankan besar -->
+            <h2 id="teks-level">Bar: 0</h2> 
+            
+            <!-- Tambahan Visual Baterai Nokia di bawah teks -->
+            <div class="battery-container">
+                <div class="battery-body">
+                    <div class="battery-bar" id="bar-1"></div>
+                    <div class="battery-bar" id="bar-2"></div>
+                    <div class="battery-bar" id="bar-3"></div>
+                    <div class="battery-bar" id="bar-4"></div>
+                </div>
+                <div class="battery-tip"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Grafik History -->
+    <div class="chart-container">
+        <canvas id="grafikTegangan"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
