@@ -26,17 +26,23 @@ const chartTegangan = new Chart(ctx, {
             tension: 0.4 // Membuat garis melengkung halus
         }]
     },
-    options: {
+options: {
         responsive: true,
         scales: {
             y: {
                 min: 0,
                 max: 4.2,
+                ticks: {
+                    autoSkip: false, // <-- KUNCI PERBAIKAN: Paksa semua angka muncul
+                    font: {
+                        size: 10     // <-- Mengecilkan angka sedikit agar tidak berdesakan
+                    }
+                },
                 afterBuildTicks: function(axis) {
                     let customTicks = [];
                     
                     // 1. Rentang 0V s.d. 2.7V (Lompatan per 0.3V)
-                    for (let i = 0; i < 3.0; i += 0.3) {
+                    for (let i = 0; i <= 2.71; i += 0.3) {
                         customTicks.push({ value: parseFloat(i.toFixed(1)) });
                     }
                     
@@ -45,7 +51,7 @@ const chartTegangan = new Chart(ctx, {
                         customTicks.push({ value: parseFloat(i.toFixed(1)) });
                     }
                     
-                    axis.ticks = customTicks; // Menerapkan garis kustom ke grafik
+                    axis.ticks = customTicks; 
                 }
             }
         },
